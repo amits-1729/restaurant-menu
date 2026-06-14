@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coastal Deck | Seafood Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/global.css">
+    <link rel="stylesheet" href="assets/coastal.css">
+</head>
+<body>
+
+    <div style="max-width: 900px; margin: 0 auto;">
+        <a href="index.html" class="back-home-anchor coastal-back">← Back to Collection</a>
+    </div>
+    
+    <div class="coastal-menu-frame">
+        <div class="coastal-inner-border">
+            <header>
+                <div class="coastal-brand-logo"><span>C</span></div>
+                <h1>The Coastal Deck</h1>
+                <div class="coastal-subtitle">Seafood & Coastal Heritage Cuisine</div>
+                <div class="coastal-divider"></div>
+            </header>
+            
+            <nav class="coastal-categories">
+                <div class="coastal-card-nav active" data-target="all">
+                    <span class="icon">❖</span><span class="title">All Catch</span>
+                </div>
+                <div class="coastal-card-nav" data-target="small">
+                    <span class="icon">⚓</span><span class="title">Small Plates</span>
+                </div>
+                <div class="coastal-card-nav" data-target="large">
+                    <span class="icon">🌊</span><span class="title">Mains</span>
+                </div>
+            </nav>
+
+            <main>
+                <section class="coastal-menu-section" id="small">
+                    <h2 class="coastal-section-heading">Small Plates</h2>
+                    <div class="coastal-item-row">
+                        <span class="coastal-item-name">Konkan Spiced Soft-Shell Crab</span><span class="coastal-item-leader"></span><span class="coastal-item-price">₹950</span>
+                    </div>
+                    <p class="coastal-item-description">Crisp fried local crab tossed with unrefined kokum reduction, roasted curry leaf powder, and gun-powder dust.</p>
+                </section>
+
+                <section class="coastal-menu-section" id="large">
+                    <h2 class="coastal-section-heading">Mains & Heritage Curries</h2>
+                    <div class="coastal-item-row">
+                        <span class="coastal-item-name">Malabar Red Snapper Curry</span><span class="coastal-item-leader"></span><span class="coastal-item-price">₹1,250</span>
+                    </div>
+                    <p class="coastal-item-description">Fresh line-caught red snapper simmered down in raw coconut milk infused with green chilies and dried Malabar tamarind.</p>
+                </section>
+            </main>
+
+            <footer style="text-align: center; margin-top: 40px;">
+                <div style="font-family: 'Playfair Display', serif; color: #d07c4b; font-size:13px;">Executive Chef &middot; Hari Nayak</div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.coastal-card-nav').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.coastal-card-nav').forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                
+                const target = card.getAttribute('data-target');
+                document.querySelectorAll('.coastal-menu-section').forEach(sec => {
+                    if (target === 'all' || sec.id === target) sec.classList.remove('hidden');
+                    else sec.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

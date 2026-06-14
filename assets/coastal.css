@@ -1,0 +1,60 @@
+body {
+    background-color: #0a192f;
+    color: #f1f5f9;
+    padding: 20px 15px;
+}
+
+.coastal-menu-frame {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    border: 2px solid #d07c4b;
+    padding: 15px;
+    background: linear-gradient(135deg, #0a192f 0%, #050c18 100%);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+.coastal-inner-border {
+    border: 1px solid rgba(208, 124, 75, 0.15);
+    padding: 25px 20px;
+}
+
+/* Header UI Elements */
+.coastal-menu-frame header { text-align: center; margin-bottom: 35px; }
+.coastal-brand-logo {
+    width: 65px; height: 65px; border-radius: 50%; border: 1px solid rgba(208, 124, 75, 0.4);
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; background: rgba(0,0,0,0.2);
+}
+.coastal-brand-logo span { font-family: 'Playfair Display', serif; font-size: 24px; font-style: italic; font-weight: 600; color: #d07c4b; }
+.coastal-menu-frame h1 { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 600; letter-spacing: 2px; color: #f1f5f9; }
+.coastal-subtitle { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 6px; color: #f49b66; text-transform: uppercase; margin-top: 6px; }
+.coastal-divider { width: 120px; height: 1px; margin: 20px auto; background: linear-gradient(to right, transparent, #d07c4b, transparent); }
+
+/* Swipe Navigation Ribbon */
+.coastal-categories { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 40px; }
+.coastal-card-nav {
+    background-color: #112240; border: 1px solid rgba(208, 124, 75, 0.15); padding: 18px 10px;
+    text-align: center; cursor: pointer; transition: all 0.4s ease; display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.coastal-card-nav.active, .coastal-card-nav:hover { border-color: #d07c4b; background-color: #1d3557; }
+.coastal-card-nav .icon { color: #d07c4b; font-size: 18px; }
+.coastal-card-nav .title { font-family: 'Montserrat', sans-serif; font-size: 9.5px; text-transform: uppercase; letter-spacing: 2px; color: #f1f5f9; }
+
+/* Items List Styling Rules */
+.coastal-menu-section.hidden { display: none; }
+.coastal-section-heading { font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; letter-spacing: 2px; text-align: center; color: #f49b66; margin: 35px 0 25px 0; display: flex; align-items: center; justify-content: center; gap: 15px; }
+.coastal-section-heading::before, .coastal-section-heading::after { content: ""; height: 1px; width: 40px; background-color: rgba(208, 124, 75, 0.15); }
+.coastal-item-row { display: flex; align-items: flex-end; justify-content: space-between; width: 100%; margin-bottom: 5px; }
+.coastal-item-name { font-family: 'Playfair Display', serif; font-size: 15px; color: #f1f5f9; letter-spacing: 0.5px; }
+.coastal-item-leader { flex-grow: 1; border-bottom: 1px dotted rgba(208, 124, 75, 0.2); margin: 0 15px; position: relative; top: -4px; }
+.coastal-item-price { font-family: 'Montserrat', sans-serif; font-size: 13.5px; font-weight: 600; color: #d07c4b; }
+.coastal-item-description { font-size: 12px; font-style: italic; line-height: 1.5; color: #94a3b8; max-width: 85%; font-weight: 300; margin-bottom: 24px; }
+
+.back-home-anchor.coastal-back { color: #f49b66; }
+
+@media (max-width: 768px) {
+    .coastal-categories { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }
+    .coastal-card-nav { flex: 0 0 calc(60% - 5px); scroll-snap-align: start; }
+    .coastal-item-leader { display: none; }
+    .coastal-item-name { max-width: 75%; }
+}

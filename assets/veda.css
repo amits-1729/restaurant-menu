@@ -1,0 +1,65 @@
+body {
+    background-color: #0b291b;
+    color: #f7f4eb;
+    padding: 20px 15px;
+}
+
+.veda-menu-frame {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    border: 2px solid #d4af37;
+    padding: 15px;
+    background: linear-gradient(135deg, #0b291b 0%, #061910 100%);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+.veda-inner-border {
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    padding: 25px 20px;
+}
+
+/* Header UI Elements */
+.veda-menu-frame header { text-align: center; margin-bottom: 35px; }
+.veda-brand-logo {
+    width: 65px; height: 65px; border: 1px solid rgba(212, 175, 55, 0.4); transform: rotate(45deg);
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; background: rgba(0,0,0,0.2);
+}
+.veda-brand-logo span { transform: rotate(-45deg); font-family: 'Cinzel', serif; font-size: 24px; font-weight: 700; color: #d4af37; }
+.veda-menu-frame h1 { font-family: 'Cinzel', serif; font-size: 42px; letter-spacing: 12px; text-transform: uppercase; color: #d4af37; }
+.veda-subtitle { font-family: 'Marcellus', serif; font-size: 11px; letter-spacing: 5px; color: #f3cf65; text-transform: uppercase; margin-top: 6px; }
+.veda-divider { width: 120px; height: 1px; margin: 20px auto; background: linear-gradient(to right, transparent, #d4af37, transparent); }
+
+/* Swipe Navigation Cards Ribbon */
+.veda-categories { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 40px; }
+.veda-card-nav {
+    background-color: #123826; border: 1px solid rgba(212, 175, 55, 0.15); padding: 18px 10px;
+    text-align: center; cursor: pointer; transition: all 0.4s ease; display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.veda-card-nav.active, .veda-card-nav:hover { border-color: #d4af37; background-color: #17442f; }
+.veda-card-nav .icon { color: #d4af37; font-size: 18px; }
+.veda-card-nav .title { font-family: 'Marcellus', serif; font-size: 10.5px; text-transform: uppercase; letter-spacing: 2px; color: #f7f4eb; }
+
+/* Menu Card List Configurations */
+.veda-menu-section.hidden { display: none; }
+.veda-section-heading { font-family: 'Cinzel', serif; font-size: 15px; letter-spacing: 4px; text-transform: uppercase; text-align: center; color: #f3cf65; margin: 35px 0 25px 0; display: flex; align-items: center; justify-content: center; gap: 15px; }
+.veda-section-heading::before, .veda-section-heading::after { content: ""; height: 1px; width: 40px; background-color: rgba(212, 175, 55, 0.15); }
+.veda-item-row { display: flex; align-items: flex-end; justify-content: space-between; width: 100%; margin-bottom: 5px; }
+.veda-item-name { font-family: 'Marcellus', serif; font-size: 15px; text-transform: uppercase; color: #f7f4eb; letter-spacing: 1px; }
+.veda-item-leader { flex-grow: 1; border-bottom: 1px dotted rgba(212, 175, 55, 0.2); margin: 0 15px; position: relative; top: -4px; }
+.veda-item-price { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; color: #d4af37; }
+.veda-item-description { font-size: 12px; font-style: italic; line-height: 1.5; color: #b3c2ba; max-width: 85%; font-weight: 300; margin-bottom: 24px; }
+
+/* Navigation Back Anchor UI Component */
+.back-home-anchor {
+    display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 2px; margin: 20px auto 40px auto; font-weight: 500; transition: all 0.3s ease; color: #f3cf65;
+}
+.back-home-anchor:hover { color: #fff; transform: translateX(-4px); }
+
+@media (max-width: 768px) {
+    .veda-categories { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }
+    .veda-card-nav { flex: 0 0 calc(50% - 5px); scroll-snap-align: start; }
+    .veda-item-leader { display: none; }
+    .veda-item-name { max-width: 75%; }
+}

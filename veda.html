@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veda | Artisanal Indian Cuisine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Marcellus&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/global.css">
+    <link rel="stylesheet" href="assets/veda.css">
+</head>
+<body>
+
+    <div style="max-width: 900px; margin: 0 auto;">
+        <a href="index.html" class="back-home-anchor">← Back to Collection</a>
+    </div>
+    
+    <div class="veda-menu-frame">
+        <div class="veda-inner-border">
+            <header>
+                <div class="veda-brand-logo"><span>V</span></div>
+                <h1>Veda</h1>
+                <div class="veda-subtitle">Artisanal Indian Cuisine</div>
+                <div class="veda-divider"></div>
+            </header>
+            
+            <nav class="veda-categories">
+                <div class="veda-card-nav active" data-target="all">
+                    <span class="icon">❖</span><span class="title">Full Menu</span>
+                </div>
+                <div class="veda-card-nav" data-target="appetizers">
+                    <span class="icon">❈</span><span class="title">Shuru</span>
+                </div>
+                <div class="veda-card-nav" data-target="mains">
+                    <span class="icon">🔱</span><span class="title">Anant</span>
+                </div>
+                <div class="veda-card-nav" data-target="desserts">
+                    <span class="icon">⚜</span><span class="title">Meetha</span>
+                </div>
+            </nav>
+
+            <main>
+                <section class="veda-menu-section" id="appetizers">
+                    <h2 class="veda-section-heading">Shuru · Appetizers</h2>
+                    <div class="veda-item-row">
+                        <span class="veda-item-name">Deconstructed Aloo Tikki Chaat</span><span class="veda-item-leader"></span><span class="veda-item-price">₹450</span>
+                    </div>
+                    <p class="veda-item-description">Crispy fingerling potato galette, spiced chickpea reduction, sweetened yogurt spheres, and mint espuma.</p>
+                </section>
+
+                <section class="veda-menu-section" id="mains">
+                    <h2 class="veda-section-heading">Anant · Mains</h2>
+                    <div class="veda-item-row">
+                        <span class="veda-item-name">Gold Leaf Shahi Paneer</span><span class="veda-item-leader"></span><span class="veda-item-price">₹750</span>
+                    </div>
+                    <p class="veda-item-description">Pressed organic cottage cheese slow-braised in a velvety, mace-perfumed cashew and tomato satin gravy.</p>
+                </section>
+
+                <section class="veda-menu-section" id="desserts">
+                    <h2 class="veda-section-heading">Meetha · Desserts</h2>
+                    <div class="veda-item-row">
+                        <span class="veda-item-name">Saffron Ghevar Mille-Feuille</span><span class="veda-item-leader"></span><span class="veda-item-price">₹550</span>
+                    </div>
+                    <p class="veda-item-description">Traditional Rajasthani honeycomb disc layered with pistachio pastry cream and rabdi mousse.</p>
+                </section>
+            </main>
+
+            <footer style="text-align: center; margin-top: 40px;">
+                <div style="font-family: 'Cinzel', serif; color: #d4af37; text-transform: uppercase; font-size:12px; letter-spacing:2px;">Culinary Director &middot; Ranveer Brar</div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.veda-card-nav').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.veda-card-nav').forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                
+                const target = card.getAttribute('data-target');
+                document.querySelectorAll('.veda-menu-section').forEach(sec => {
+                    if (target === 'all' || sec.id === target) sec.classList.remove('hidden');
+                    else sec.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
